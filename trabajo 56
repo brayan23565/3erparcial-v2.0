@@ -1,0 +1,65 @@
+#include <iostream>
+
+using namespace std;
+
+void opcionesAnonimo() {
+    cout << "Opciones para usuario anónimo:" << endl;
+    cout << "1. Iniciar sesión" << endl;
+    cout << "2. Ver productos disponibles" << endl;
+    cout << "0. Salir" << endl;
+}
+
+void opcionesRegistrado() {
+    cout << "Opciones para usuario registrado:" << endl;
+    cout << "1. Modificar datos personales" << endl;
+    cout << "2. Ver vendedores recomendados" << endl;
+    cout << "3. Recomendar vendedor" << endl;
+    cout << "4. Ver productos disponibles" << endl;
+    cout << "5. Ver productos de vendedores recomendados" << endl;
+    cout << "6. Valorar producto" << endl;
+    cout << "7. Poner producto a la venta" << endl;
+    cout << "8. Cerrar sesión" << endl;
+    cout << "0. Salir" << endl;
+}
+
+void opcionesAdmin() {
+    cout << "Opciones para usuario administrador:" << endl;
+    cout << "1. Agregar nuevo usuario" << endl;
+    cout << "2. Modificar datos de usuario" << endl;
+    cout << "3. Ver todos los usuarios" << endl;
+    cout << "4. Ver vendedores recomendados de un usuario" << endl;
+    cout << "5. Ver productos de un vendedor" << endl;
+    cout << "6. Ver todos los productos disponibles" << endl;
+    cout << "7. Cerrar sesión" << endl;
+    cout << "0. Salir" << endl;
+}
+
+int main() {
+    int opcion;
+    bool salir = false;
+
+    while (!salir) {
+        opcionesAnonimo();
+        cout << "Ingrese una opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << "Iniciando sesión..." << endl;
+                break;
+            case 2:
+                cout << "Mostrando productos disponibles..." << endl;
+                break;
+            case 0:
+                salir = true;
+                break;
+            default:
+                cout << "Opción no válida. Intente de nuevo." << endl;
+                break;
+        }
+    }
+
+    cout << "¡Hasta luego!" << endl;
+
+    return 0;
+}
