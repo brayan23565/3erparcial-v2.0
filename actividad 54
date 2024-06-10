@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+unsigned long long factorial(int n) {
+    if (n == 0) return 1;
+    unsigned long long fact = 1;
+    for (int i = 1; i <= n; ++i) {
+        fact *= i;
+    }
+    return fact;
+}
+
+bool esPrimo(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= sqrt(n); ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    double numero;
+    cout << "Introduce un numero natural con dos decimales: ";
+    cin >> numero;
+
+    int parteEntera = static_cast<int>(numero);
+    int parteDecimal = static_cast<int>((numero - parteEntera) * 100);
+
+    double raizCuadrada = sqrt(numero);
+    cout << "La raiz cuadrada de " << numero << " es " << raizCuadrada << endl;
+
+    unsigned long long fact = factorial(parteEntera);
+    cout << "El factorial de " << parteEntera << " es " << fact << endl;
+
+    bool primo = esPrimo(parteEntera);
+    if (primo) {
+        cout << parteEntera << " es un numero primo." << endl;
+    } else {
+        cout << parteEntera << " no es un numero primo." << endl;
+    }
+
+    double potencia = pow(parteEntera, parteDecimal);
+    cout << parteEntera << " elevado a la potencia de " << parteDecimal << " es " << potencia << endl;
+
+    if (numero > 50 && numero < 100) {
+        cout << numero << " es mayor a 50 y menor que 100." << endl;
+    } else {
+        cout << numero << " no cumple con la condición de ser mayor a 50 y menor que 100." << endl;
+    }
+
+    return 0;
+}
